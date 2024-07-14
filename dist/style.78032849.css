@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'inter';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/Inter-Regular.7951e3c2.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'interMedium';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/Inter-Medium.c48570a4.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'interSemiBold';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/Inter-SemiBold.78d461fd.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'PPMonumentLight';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/PPMonumentExtended-Light.f5305112.otf');
+}
+
+@font-face {
+	font-family: 'PPMonumentBlack';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/PPMonumentExtended-Black.ce286364.otf');
+}
+
+@font-face {
+	font-family: 'PPMonument';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/PPMonumentExtended-Regular.5562ea0e.otf');
+}
+
+@font-face {
+	font-family: 'MonumentUltraBold';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/MonumentExtended-Ultrabold.7816525d.otf');
+}
+
+.inter {
+	font-family: "inter";
+}
+
+.interMedium {
+	font-family: "interMedium";
+}
+
+.interSemiBold {
+	font-family: "interSemiBold";
+}
+
+.PPMonumentLight {
+	font-family: "PPMonumentLight";
+}
+
+.PPMonument {
+	font-family: "PPMonument";
+}
+
+.PPMonumentBlack {
+	font-family: "PPMonumentBlack";
+}
+
+.MonumentUltraBold {
+	font-family: "MonumentUltraBold";
+}
+
+::-webkit-scrollbar {
+	width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: #f8e4e4d1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #e10531dd;
+	border-radius: 1px ;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #e64a69;
+  }
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 1000;
+}
+
+.js .loading::before {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-bg);
+}
+
+.js .loading::after {
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	margin: -30px 0 0 -30px;
+	border-radius: 50%;
+	opacity: 0.4;
+	background: var(--color-link);
+	animation: loaderAnim 0.7s linear infinite alternate forwards;
+
+}
+
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5, 0.5, 1);
+	}
+}
+
+.contactBtn {
+	width: fit-content;
+	height: fit-content;
+	padding: 0.6rem 2rem;
+	border-radius: 10rem;
+	background-color: #E10531;
+	color: white;
+	isolation: isolate;
+	box-shadow: 0px 0px 30px 0.5px #E10531, 0px 0px 0px 10.5963px rgba(255, 255, 255, 0.07), inset 0px -3.94722px 0px rgba(0, 0, 0, 0.2), inset 0px 2.64907px 0px rgba(255, 255, 255, 0.4);
+
+
+}
+
+.webgl {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	scale: 0.8 !important;
+	opacity: 0.8;
+}
+
+.heroSpan1 {
+	line-height: 0 !important;
+	margin: 0 !important;
+}
+
+.heroSpan2 {
+	line-height: 0 !important;
+	margin: 0 !important;
+}
+
+.scrollChevron {
+	animation: scrollChevronAnimation 2s infinite ease;
+}
+
+@keyframes scrollChevronAnimation {
+	0% {
+		transform: translateY(0%);
+	}
+
+	50% {
+		transform: translateY(90%);
+	}
+
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+.heroLight {
+	position: absolute !important;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	bottom: -20% !important;
+	height: 50vh !important;
+	width: 300vw !important;
+	background: rgba(225, 5, 49, 0.33) !important;
+	border-radius: 50% !important;
+	z-index: 49 !important;
+	filter: blur(200px);
+}
+
+.burgerBar{
+	width: 1.7vw;
+	height: 1px;
+	background-color: white;
+}
+
+/*# sourceMappingURL=/style.78032849.css.map */
