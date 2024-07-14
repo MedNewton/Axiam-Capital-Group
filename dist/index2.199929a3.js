@@ -39677,11 +39677,10 @@ var App = /*#__PURE__*/function () {
     _classCallCheck(this, App);
     this.blob = null;
     this.addBlobs();
-    _gsap.default.registerPlugin(SplitText);
 
     // Main animation tl
-
-    this.tl.add(this.article()).add(this.animBlobs(), '-=1');
+    this.tl = _gsap.default.timeline();
+    this.tl.add(this.animBlobs(), '-=1');
   }
   return _createClass(App, [{
     key: "addBlobs",

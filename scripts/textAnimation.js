@@ -50,7 +50,7 @@ class TextAnimations {
                 }, "+=4")
         })
         dots.forEach(dot => {
-            const splitDot = new SplitText(dot);
+            const splitDot = new SplitTextJS(dot);
             tl3
                 .from(splitDot.chars, {
                     opacity: 0,

@@ -5606,7 +5606,7 @@ var TextAnimations = /*#__PURE__*/function () {
         }, "+=4");
       });
       dots.forEach(function (dot) {
-        var splitDot = new SplitText(dot);
+        var splitDot = new _splitTextJs.default(dot);
         tl3.from(splitDot.chars, {
           opacity: 0,
           y: 10,

@@ -7,13 +7,11 @@ class App {
   constructor() {
     this.blob = null;
     this.addBlobs();
-    gsap.registerPlugin(SplitText);
 
     // Main animation tl
+    this.tl = gsap.timeline();
 
-    this.tl
-      .add(this.article())
-      .add(this.animBlobs(), '-=1');
+    this.tl.add(this.animBlobs(), '-=1');
   }
 
   addBlobs() {
