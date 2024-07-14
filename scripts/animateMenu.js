@@ -40,6 +40,7 @@ class MenuAnimations {
             gsap.to(desktopMenuContainer, {
                 duration: 0.3,
                 height: "auto",
+                zIndex: 9999,
                 paddingBottom: 10,
                 paddingBottom: 10,
                 ease: "power2.inOut"
@@ -65,6 +66,7 @@ class MenuAnimations {
             gsap.to(desktopMenuContainer, {
                 duration: 0.3,
                 height: "0px",
+                
                 ease: "power2.inOut",
                 paddingBottom: 0,
                 paddingBottom: 0,

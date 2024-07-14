@@ -135,6 +135,14 @@
 	}
 }
 
+nav{
+	z-index: 9999 !important;
+}
+
+.heroCenterText{
+	z-index: 50 !important;
+}
+
 .contactBtn {
 	width: fit-content;
 	height: fit-content;

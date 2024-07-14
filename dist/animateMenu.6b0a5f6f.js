@@ -5594,6 +5594,7 @@ var MenuAnimations = /*#__PURE__*/function () {
           _gsap.default.to(desktopMenuContainer, _defineProperty(_defineProperty({
             duration: 0.3,
             height: "auto",
+            zIndex: 9999,
             paddingBottom: 10
           }, "paddingBottom", 10), "ease", "power2.inOut"));
           desktopMenuItems.forEach(function (item) {
