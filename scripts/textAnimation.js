@@ -5,8 +5,7 @@ import SplitTextJS from 'split-text-js';
 class TextAnimations {
 
     constructor() {
-        this.animateHeroText()
-        this.animateMenu()
+        this.animateHeroText();
     }
 
     animateHeroText() {
@@ -63,33 +62,6 @@ class TextAnimations {
                     y: -10,
                     stagger: 0.02
                 }, "+=4.3")
-        })
-    }
-
-    animateMenu(){
-        const burgerBtn = document.querySelector("burgerBtn")
-        const toggleMenuBtnLine1 = document.querySelector(".bar1")
-        const toggleMenuBtnLine2 = document.querySelector(".bar2")
-        const toggleMenuBtnLine3 = document.querySelector(".bar3")
-        let isToggled = false;
-        burgerBtn.addEventListener('click', function (){
-            if(isToggled === false){
-                isToggled = true;
-                alert(isToggled)
-                gsap.to(toggleMenuBtnLine2, {
-                    duration: 0.2,
-                    width: "0px",
-                    ease: "power2.inOut",
-                });
-            }else{
-                isToggled = false;
-                alert(isToggled)
-                gsap.to(toggleMenuBtnLine2, {
-                    duration: 0.2,
-                    width: "1.7vw",
-                    ease: "power2.inOut"
-                })
-            }
         })
     }
 }

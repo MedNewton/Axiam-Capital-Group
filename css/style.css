@@ -81,23 +81,23 @@
 
 ::-webkit-scrollbar {
 	width: 3px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
 	background: #f8e4e4d1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
 	background: #e10531dd;
-	border-radius: 1px ;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+	border-radius: 1px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
 	background: #e64a69;
-  }
+}
 
 /* Page Loader */
 .js .loading::before,
@@ -157,6 +157,18 @@
 	opacity: 0.8;
 }
 
+@media only screen and (max-width: 768px) {
+	.webgl {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		scale: 1.2 !important;
+		width: 100vw !important;
+		opacity: 0.7;
+	}
+  }
+
 .heroSpan1 {
 	line-height: 0 !important;
 	margin: 0 !important;
@@ -198,8 +210,36 @@
 	filter: blur(200px);
 }
 
-.burgerBar{
+.burgerBar {
 	width: 1.7vw;
 	height: 1px;
 	background-color: white;
+}
+
+.desktopNavMenuItem:hover .menuItemLabel {
+	filter: invert(1);
+}
+
+.desktopNavMenuItem:hover .menuItemDot {
+	opacity: 1;
+	transition: opacity ease-in-out 0.4s;
+}
+
+.glassBox {
+	background: rgba(196, 196, 196, 0.01);
+	box-shadow: inset 0px 39px 56px -36px rgba(255, 255, 255, 0.5), inset 0px 7px 11px -4px #FFFFFF, inset 0px -82px 68px -64px rgba(96, 68, 145, 0.3), inset 0px 98px 100px -48px rgba(202, 172, 255, 0.3), inset 0px 4px 18px rgba(154, 146, 210, 0.3), inset 0px 1px 40px rgba(227, 222, 255, 0.2);
+	backdrop-filter: blur(50px);
+}
+
+.glassBoxLightSpot {
+	position: absolute !important;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	bottom: -25% !important;
+	height: 50% !important;
+	width: 100% !important;
+	background: rgba(225, 5, 49, 0.33) !important;
+	border-radius: 50% !important;
+	z-index: 49 !important;
+	filter: blur(100px);
 }

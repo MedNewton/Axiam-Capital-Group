@@ -5542,85 +5542,145 @@ class SplitTextJS {
     }
 }
 module.exports = SplitTextJS;
-},{}],"scripts/textAnimation.js":[function(require,module,exports) {
+},{}],"scripts/animateMenu.js":[function(require,module,exports) {
 "use strict";
 
 var _gsap = _interopRequireDefault(require("gsap"));
 var _splitTextJs = _interopRequireDefault(require("split-text-js"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-var TextAnimations = /*#__PURE__*/function () {
-  function TextAnimations() {
-    _classCallCheck(this, TextAnimations);
-    this.animateHeroText();
+var MenuAnimations = /*#__PURE__*/function () {
+  function MenuAnimations() {
+    _classCallCheck(this, MenuAnimations);
+    this.animateMenu();
   }
-  return _createClass(TextAnimations, [{
-    key: "animateHeroText",
-    value: function animateHeroText() {
-      var tl1 = _gsap.default.timeline({
-        repeat: -1,
-        repeatDelay: 0
+  return _createClass(MenuAnimations, [{
+    key: "animateMenu",
+    value: function animateMenu() {
+      var tl = _gsap.default.timeline();
+      var burgerBtn = document.querySelector("#burgerBtn");
+      var burgerBar1 = document.querySelector('.bar1');
+      var burgerBar2 = document.querySelector('.bar2');
+      var burgerBar3 = document.querySelector('.bar3');
+      var desktopMenuContainer = document.querySelector('.desktopNavMenu');
+      var desktopMenuItems = _gsap.default.utils.toArray(".desktopNavMenuItem");
+      var isToggled = false;
+      burgerBtn.addEventListener('click', function () {
+        if (isToggled === false) {
+          isToggled = true;
+          _gsap.default.to(burgerBar2, {
+            duration: 0.2,
+            width: "0px",
+            ease: "power2.inOut"
+          });
+          _gsap.default.to(burgerBar1, {
+            duration: 0.2,
+            rotate: 45,
+            transform: "translate(0, 6.5px)",
+            ease: "power2.inOut"
+          });
+          _gsap.default.to(burgerBar3, {
+            duration: 0.2,
+            rotate: -45,
+            transform: "translate(0, -6.5px)",
+            ease: "power2.inOut"
+          });
+          _gsap.default.to(desktopMenuContainer, _defineProperty(_defineProperty({
+            duration: 0.3,
+            height: "auto",
+            paddingBottom: 10
+          }, "paddingBottom", 10), "ease", "power2.inOut"));
+          desktopMenuItems.forEach(function (item) {
+            tl.to(item, {
+              duration: 0.4,
+              opacity: 1,
+              ease: "power3.inOut",
+              stagger: 0.05
+            }, "<");
+          });
+        } else {
+          isToggled = false;
+          desktopMenuItems.forEach(function (item) {
+            tl.to(item, {
+              duration: 0.4,
+              opacity: 0,
+              ease: "power3.inOut",
+              stagger: 0.05
+            }, "<");
+          });
+          _gsap.default.to(desktopMenuContainer, _defineProperty({
+            duration: 0.3,
+            height: "0px",
+            ease: "power2.inOut",
+            paddingBottom: 0
+          }, "paddingBottom", 0));
+          _gsap.default.to(burgerBar2, {
+            duration: 0.2,
+            width: "1.7vw",
+            ease: "power2.inOut"
+          });
+          _gsap.default.to(burgerBar1, {
+            duration: 0.2,
+            rotate: 0,
+            transform: "translate(0, 0)",
+            ease: "power2.inOut"
+          });
+          _gsap.default.to(burgerBar3, {
+            duration: 0.2,
+            rotate: 0,
+            transform: "translate(0, 0)",
+            ease: "power2.inOut"
+          });
+        }
       });
-      var tl2 = _gsap.default.timeline({
-        repeat: -1,
-        repeatDelay: 0
-      });
-      var tl3 = _gsap.default.timeline({
-        repeat: -1,
-        repeatDelay: 0
-      });
-      var titles1 = _gsap.default.utils.toArray(".heroSpan1");
-      var titles2 = _gsap.default.utils.toArray(".heroSpan2");
-      var dots = _gsap.default.utils.toArray(".heroDot");
-      titles1.forEach(function (title) {
-        var splitTitle = new _splitTextJs.default(title);
-        tl1.from(splitTitle.chars, {
-          opacity: 0,
-          y: 10,
-          rotateX: -90,
-          stagger: 0.02
-        }, "<").to(splitTitle.chars, {
-          opacity: 0,
-          y: -10,
-          rotateX: 90,
-          stagger: 0.02
-        }, "+=4");
-      });
-      titles2.forEach(function (title) {
-        var splitTitle = new _splitTextJs.default(title);
-        tl2.from(splitTitle.chars, {
-          opacity: 0,
-          y: 10,
-          rotateX: -90,
-          stagger: 0.02
-        }, "<").to(splitTitle.chars, {
-          opacity: 0,
-          y: -10,
-          rotateX: 90,
-          stagger: 0.02
-        }, "+=4");
-      });
-      dots.forEach(function (dot) {
-        var splitDot = new SplitText(dot);
-        tl3.from(splitDot.chars, {
-          opacity: 0,
-          y: 10,
-          stagger: 0.02
-        }, "<").to(splitDot.chars, {
-          opacity: 0,
-          y: -10,
-          stagger: 0.02
-        }, "+=4.3");
+      desktopMenuItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+          document.querySelector(".currentSectionTitle").innerText = item.children[0].innerText;
+          // Here you will redirect to a section
+          isToggled = false;
+          desktopMenuItems.forEach(function (item) {
+            tl.to(item, {
+              duration: 0.4,
+              opacity: 0,
+              ease: "power3.inOut",
+              stagger: 0.05
+            }, "<");
+          });
+          _gsap.default.to(desktopMenuContainer, _defineProperty({
+            duration: 0.3,
+            height: "0px",
+            ease: "power2.inOut",
+            paddingBottom: 0
+          }, "paddingBottom", 0));
+          _gsap.default.to(burgerBar2, {
+            duration: 0.2,
+            width: "1.7vw",
+            ease: "power2.inOut"
+          });
+          _gsap.default.to(burgerBar1, {
+            duration: 0.2,
+            rotate: 0,
+            transform: "translate(0, 0)",
+            ease: "power2.inOut"
+          });
+          _gsap.default.to(burgerBar3, {
+            duration: 0.2,
+            rotate: 0,
+            transform: "translate(0, 0)",
+            ease: "power2.inOut"
+          });
+        });
       });
     }
   }]);
 }();
-new TextAnimations();
+new MenuAnimations();
 },{"gsap":"node_modules/gsap/index.js","split-text-js":"node_modules/split-text-js/SplitTextJS.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -5790,5 +5850,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","scripts/textAnimation.js"], null)
-//# sourceMappingURL=/textAnimation.512665bd.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","scripts/animateMenu.js"], null)
+//# sourceMappingURL=/animateMenu.6b0a5f6f.js.map

@@ -18,7 +18,8 @@ class App {
 
   addBlobs() {
     // size, speed, color, freq, density, strength, offset
-    this.blob = new Blob(4.0, 0.15, 4.0, 2.2, 0.3, Math.PI * 2);   
+    if(window.innerWidth <= 786) this.blob = new Blob(2.0, 0.15, 3.0, 2.2, 0.3, Math.PI * 2);
+    else this.blob = new Blob(4.0, 0.15, 4.0, 2.2, 0.3, Math.PI * 2);   
     this.blob.position.set(0, 0, 0);
     this.blob.rotation.set(0, 0, 0);
     Gl.scene.add(this.blob);
