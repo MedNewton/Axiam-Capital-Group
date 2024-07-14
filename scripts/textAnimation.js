@@ -1,7 +1,6 @@
 import gsap from 'gsap';
-import SplitText from 'gsap-trial/SplitText';
+import SplitTextJS from 'split-text-js';
 
-gsap.registerPlugin(SplitText);
 
 class TextAnimations {
 
@@ -20,7 +19,7 @@ class TextAnimations {
         const dots = gsap.utils.toArray(".heroDot")
 
         titles1.forEach(title => {
-            const splitTitle = new SplitText(title);
+            const splitTitle = new SplitTextJS(title);
             tl1
                 .from(splitTitle.chars, {
                     opacity: 0,
@@ -36,7 +35,7 @@ class TextAnimations {
                 }, "+=4")
         });
         titles2.forEach(title => {
-            const splitTitle = new SplitText(title);
+            const splitTitle = new SplitTextJS(title);
             tl2
                 .from(splitTitle.chars, {
                     opacity: 0,
