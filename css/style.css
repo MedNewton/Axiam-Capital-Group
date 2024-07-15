@@ -137,11 +137,11 @@
 	}
 }
 
-nav{
+nav {
 	z-index: 9999 !important;
 }
 
-.heroCenterText{
+.heroCenterText {
 	z-index: 50 !important;
 }
 
@@ -154,8 +154,6 @@ nav{
 	color: white;
 	isolation: isolate;
 	box-shadow: 0px 0px 30px 0.5px #E10531, 0px 0px 0px 10.5963px rgba(255, 255, 255, 0.07), inset 0px -3.94722px 0px rgba(0, 0, 0, 0.2), inset 0px 2.64907px 0px rgba(255, 255, 255, 0.4);
-
-
 }
 
 .webgl {
@@ -178,7 +176,7 @@ nav{
 		opacity: 0.7;
 		overflow-x: hidden !important;
 	}
-  }
+}
 
 .heroSpan1 {
 	line-height: 0 !important;
@@ -253,4 +251,143 @@ nav{
 	border-radius: 50% !important;
 	z-index: 49 !important;
 	filter: blur(100px);
+}
+
+.smallGlassBoxLightSpot1 {
+	position: absolute !important;
+	left: 10%;
+	transform: translate(-50%, 0%);
+	bottom: 25% !important;
+	height: 20rem !important;
+	width: 20rem !important;
+	background: rgba(225, 5, 49, 0.5) !important;
+	border-radius: 50% !important;
+	z-index: 49 !important;
+	filter: blur(100px);
+}
+
+.smallGlassBoxLightSpot2 {
+	position: absolute !important;
+	left: 90%;
+	transform: translate(-50%, 0%);
+	top: 25% !important;
+	height: 20rem !important;
+	width: 20rem !important;
+	background: rgba(225, 5, 49, 0.5) !important;
+	border-radius: 50% !important;
+	z-index: 49 !important;
+	filter: blur(100px);
+}
+
+@media only screen and (max-width: 768px) {
+	.smallGlassBoxLightSpot1 {
+		position: absolute !important;
+		left: 10%;
+		transform: translate(-50%, 0%);
+		bottom: 25% !important;
+		height: 10rem !important;
+		width: 10rem !important;
+		background: rgba(225, 5, 49, 0.5) !important;
+		border-radius: 50% !important;
+		z-index: 49 !important;
+		filter: blur(100px);
+	}
+
+}
+
+#lineTest1,
+#lineTest1Mobile {
+	animation: tronFilter 3s ease-in-out alternate infinite;
+}
+
+#lineTest2,
+#lineTest2Mobile {
+	animation: tronFilter 3s ease-in-out alternate-reverse infinite;
+}
+
+
+#lineTest3,
+#lineTest3Mobile {
+	animation: tronFilter 4s ease-in-out alternate-reverse infinite;
+}
+
+#lineTest4,
+#lineTest4Mobile {
+	animation: tronFilter 4s ease-in-out alternate infinite;
+}
+
+
+
+@keyframes svg-shadow {
+	from {
+		filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 15px #e60073) drop-shadow(0 0 20px #e60073);
+	}
+
+	to {
+
+		filter: drop-shadow(0 0 10px 50px #fff) drop-shadow(0 0 10px 150px #e60073) drop-shadow(0 0 10px 200px #e60073);
+	}
+}
+
+@keyframes tronFilter {
+	0% {
+		-webkit-filter: drop-shadow(-.75px 0px 6px #e00013);
+		filter: drop-shadow(-.75px 0px 6px #e03b49);
+		stroke: #e03b49;
+	}
+
+	22% {
+		-webkit-filter: drop-shadow(-.75px 0px 6px #c4258a);
+		filter: drop-shadow(-.75px 0px 6px #E10531);
+		stroke: #E10531;
+	}
+
+	/* end blue */
+
+	42% {
+		-webkit-filter: drop-shadow(-.75px 0px 6px #884173);
+		filter: drop-shadow(-.75px 0px 6px #884173);
+		stroke: #884173;
+	}
+
+	62% {
+		-webkit-filter: drop-shadow(-.75px 0px 6px #ff0071);
+		filter: drop-shadow(-.75px 0px 6px #ff0071);
+		stroke: #ff0071;
+	}
+
+	/* end magenta */
+	82% {
+		-webkit-filter: drop-shadow(-.75px 0px 6px #E10531);
+		filter: drop-shadow(-.75px 0px 6px #e3414f);
+		stroke: #e3414f;
+	}
+
+	100% {
+		-webkit-filter: drop-shadow(-.75px 0px 6px #e03b49);
+		filter: drop-shadow(-.75px 0px 6px #e00013);
+		stroke: #e00013;
+	}
+}
+
+.grafanaScreen {
+	-webkit-box-shadow: inset 0 -2% 10px 10px rgba(225, 5, 49, 0.33) !important;
+	-moz-box-shadow: inset 0 -2% 10px 10px rgba(225, 5, 49, 0.33) !important;
+	box-shadow: inset 0 -2% 10px 10px rgba(225, 5, 49, 0.33) !important;
+}
+
+.trialSection {
+	background: #E10531;
+	box-shadow: 0px 0px 30px 0.5px #E10531, 0px 0px 0px 10.5963px rgba(255, 255, 255, 0.07), inset 0px -7.94722px 0px rgba(0, 0, 0, 0.2), inset 0px 2.64907px 0px rgba(255, 255, 255, 0.4);
+}
+
+.trialBtn {
+	width: fit-content;
+	height: fit-content;
+	padding: 0.8rem 2rem 0.6rem 2rem;
+	border-radius: 10rem;
+	background-color: #0A0013;
+	color: white;
+	isolation: isolate;
+	box-shadow: 0px 0px 30px 0.5px #E10531, 0px 0px 0px 10.5963px rgba(255, 255, 255, 0.07), inset 0px -3.94722px 0px rgba(0, 0, 0, 0.2), inset 0px 2.64907px 0px rgba(255, 255, 255, 0.4);
 }
