@@ -5492,61 +5492,10 @@ var _CSSPlugin = require("./CSSPlugin.js");
 var gsapWithCSS = exports.default = exports.gsap = _gsapCore.gsap.registerPlugin(_CSSPlugin.CSSPlugin) || _gsapCore.gsap,
   // to protect from tree shaking
   TweenMaxWithCSS = exports.TweenMax = gsapWithCSS.core.Tween;
-},{"./gsap-core.js":"node_modules/gsap/gsap-core.js","./CSSPlugin.js":"node_modules/gsap/CSSPlugin.js"}],"node_modules/split-text-js/SplitTextJS.js":[function(require,module,exports) {
-/**
- * Author: Alexandre Chabeau
- * License: MIT
- * Contact: alexandrechabeau.pro@gmail.com
- * Original repos: https://github.com/saucyspray/split-text-js
- */
-class SplitTextJS {
-    constructor(_target) {
-        this.result = new Object()
-        this.result.originalText = _target.innerText
-        this.result.splitted = this.split(_target)
-        this.result.words = this.result.splitted.querySelectorAll('.SplitTextJS-wrapper')
-        this.result.chars = this.result.splitted.querySelectorAll('.SplitTextJS-char')
-        this.result.spaces = this.result.splitted.querySelectorAll('.SplitTextJS-spacer')
-        return this.result
-    }
-    createSpan(_class) {
-        let span = document.createElement('span')
-        span.style.display = "inline-block"
-        span.className = _class
-        return span
-    }
-    split(_target) {
-        let containerArray = new Array
-        const splittedTarget = _target.innerText.split(' ')
-        let counter = splittedTarget.length
-        splittedTarget.map(word => {
-            const wrapper = this.createSpan('SplitTextJS-wrapper')
-            word.split(/(?!^)/).map(char => {
-                let el = this.createSpan('SplitTextJS-char')
-                el.innerText = char
-                wrapper.appendChild(el)
-            })
-            counter--
-            containerArray.push(wrapper)
-            if (counter > 0) {
-                let space = this.createSpan('SplitTextJS-char SplitTextJS-spacer')
-                space.innerHTML = '&nbsp;'
-                containerArray.push(space)
-            }
-        })
-        _target.innerHTML = ''
-        containerArray.forEach(child => {
-            _target.appendChild(child)
-        })
-        return _target
-    }
-}
-module.exports = SplitTextJS;
-},{}],"scripts/textAnimation.js":[function(require,module,exports) {
+},{"./gsap-core.js":"node_modules/gsap/gsap-core.js","./CSSPlugin.js":"node_modules/gsap/CSSPlugin.js"}],"scripts/marqueeAnimation.js":[function(require,module,exports) {
 "use strict";
 
 var _gsap = _interopRequireDefault(require("gsap"));
-var _splitTextJs = _interopRequireDefault(require("split-text-js"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -5554,74 +5503,45 @@ function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = 
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-var TextAnimations = /*#__PURE__*/function () {
-  function TextAnimations() {
-    _classCallCheck(this, TextAnimations);
-    this.animateHeroText();
+var MarqueeAnimation = /*#__PURE__*/function () {
+  function MarqueeAnimation() {
+    _classCallCheck(this, MarqueeAnimation);
+    document.addEventListener("DOMContentLoaded", this.animateMarquee());
   }
-  return _createClass(TextAnimations, [{
-    key: "animateHeroText",
-    value: function animateHeroText() {
-      var tl1 = _gsap.default.timeline({
-        repeat: -1,
-        repeatDelay: 0
+  return _createClass(MarqueeAnimation, [{
+    key: "animateMarquee",
+    value: function animateMarquee() {
+      var marquee = document.querySelector('[wb-data="marquee"]');
+      if (!marquee) {
+        return;
+      }
+      var duration = parseInt(marquee.getAttribute("duration"), 10) || 5;
+      console.log(duration);
+      var marqueeContent = document.querySelector(".marquee-content");
+      if (!marqueeContent) {
+        return;
+      }
+      var marqueeContentClone = marqueeContent.cloneNode(true);
+      marquee.append(marqueeContentClone);
+      var tween;
+      var progress = tween ? tween.progress() : 0;
+      tween && tween.progress(0).kill();
+      var width = parseInt(getComputedStyle(marqueeContent).getPropertyValue("width"), 10);
+      var gap = parseInt(getComputedStyle(marqueeContent).getPropertyValue("column-gap"), 10);
+      var distanceToTranslate = -1 * (gap + width);
+      tween = _gsap.default.fromTo(marquee.children, {
+        x: 0
+      }, {
+        x: distanceToTranslate,
+        duration: duration,
+        ease: "none",
+        repeat: -1
       });
-      var tl2 = _gsap.default.timeline({
-        repeat: -1,
-        repeatDelay: 0
-      });
-      var tl3 = _gsap.default.timeline({
-        repeat: -1,
-        repeatDelay: 0
-      });
-      var titles1 = _gsap.default.utils.toArray(".heroSpan1");
-      var titles2 = _gsap.default.utils.toArray(".heroSpan2");
-      var dots = _gsap.default.utils.toArray(".heroDot");
-      titles1.forEach(function (title) {
-        var splitTitle = new _splitTextJs.default(title);
-        tl1.from(splitTitle.chars, {
-          opacity: 0,
-          y: 10,
-          rotateX: -90,
-          stagger: 0.02
-        }, "<").to(splitTitle.chars, {
-          opacity: 0,
-          y: -10,
-          rotateX: 90,
-          stagger: 0.02
-        }, "+=4");
-      });
-      titles2.forEach(function (title) {
-        var splitTitle = new _splitTextJs.default(title);
-        tl2.from(splitTitle.chars, {
-          opacity: 0,
-          y: 10,
-          rotateX: -90,
-          stagger: 0.02
-        }, "<").to(splitTitle.chars, {
-          opacity: 0,
-          y: -10,
-          rotateX: 90,
-          stagger: 0.02
-        }, "+=4");
-      });
-      dots.forEach(function (dot) {
-        var splitDot = new _splitTextJs.default(dot);
-        tl3.from(splitDot.chars, {
-          opacity: 0,
-          y: 10,
-          stagger: 0.02
-        }, "<").to(splitDot.chars, {
-          opacity: 0,
-          y: -10,
-          stagger: 0.02
-        }, "+=4.3");
-      });
+      tween.progress(progress);
     }
   }]);
 }();
-new TextAnimations();
-},{"gsap":"node_modules/gsap/index.js","split-text-js":"node_modules/split-text-js/SplitTextJS.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -5790,5 +5710,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","scripts/textAnimation.js"], null)
-//# sourceMappingURL=/textAnimation.512665bd.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","scripts/marqueeAnimation.js"], null)
+//# sourceMappingURL=/marqueeAnimation.e9ea70b4.js.map

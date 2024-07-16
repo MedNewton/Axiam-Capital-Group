@@ -1,7 +1,7 @@
 import Gl from './gl';
 import Blob from './gl/Blob';
-
 import gsap from 'gsap';
+
 
 class App {
   constructor() {
