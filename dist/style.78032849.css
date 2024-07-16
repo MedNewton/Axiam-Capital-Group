@@ -496,6 +496,7 @@ nav {
 
 .mobileNav {
 	background: #E10531 !important;
+	display: none !important;
 	position: fixed !important;
 	margin-left: auto !important;
 	margin-right: auto !important;
