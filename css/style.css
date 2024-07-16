@@ -493,3 +493,13 @@ nav {
 	z-index: 49 !important;
 	filter: blur(100px);
 }
+
+.mobileNav {
+	background: #E10531 !important;
+	position: fixed !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: 97vw !important;
+	transform: translateX(1.5vw) !important;
+	z-index: 999 !important;
+  }
