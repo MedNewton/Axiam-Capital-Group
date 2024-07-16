@@ -51,6 +51,10 @@
 	src: url('../fonts//MonumentExtended-Ultrabold.otf');
 }
 
+html{
+	scroll-behavior: smooth !important;
+}
+
 html, body, .bodyClass{
 	position:relative;
 	overflow-x:hidden;
@@ -232,6 +236,15 @@ nav {
 	width: 1.7vw;
 	height: 1px;
 	background-color: white;
+}
+
+@media only screen and (max-width: 768px) {
+	.burgerBar {
+		width: 8vw;
+		height: 2px;
+		background-color: white;
+	}
+
 }
 
 .desktopNavMenuItem:hover .menuItemLabel {

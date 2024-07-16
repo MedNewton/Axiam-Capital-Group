@@ -18,7 +18,7 @@
 	class="bodyClass w-screen h-fit max-w-[100vw] min-h-screen bg-black flex flex-col items-center justify-center overflow-x-hidden overflow-y-auto">
 	<main class="absolute top-0 left-0 right-0 h-fit w-full overflow-x-hidden">
 
-		<section class="relative top-0 h-screen w-full overflow-hidden">
+		<section class="relative top-0 h-screen w-full overflow-hidden sec" id="hero">
 			<nav class=" h-fit px-6 py-8 w-screen flex flex-row items-center justify-between">
 				<div class="w-3/12 flex flex-row items-center justify-start h-fit">
 					<img src="./img/axiamLogo.svg" alt="Axiam Capital Group Logo" class="w-10 aspect-square">
@@ -51,27 +51,27 @@
 				<div
 					class="desktopNavMenu absolute top-24 right-5 bg-[#e10531] mt-2 w-[20%] h-0 overflow-hidden rounded-xl flex flex-col items-start justify-between ">
 					<div
-						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem">
+						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem" id="hero-link">
 						<p class="PPMonumentBlack text-black text-md menuItemLabel">Home</p>
 						<p class="PPMonument text-white text-md opacity-0 menuItemDot">&#9679;</p>
 					</div>
 					<div
-						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem">
+						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem" id="latency-link">
 						<p class="PPMonumentBlack text-black text-md menuItemLabel">Latency</p>
 						<p class="PPMonument text-white text-md opacity-0 menuItemDot">&#9679;</p>
 					</div>
 					<div
-						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem">
+						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem" id="grafana-link">
 						<p class="PPMonumentBlack text-black text-md menuItemLabel">Grafana</p>
 						<p class="PPMonument text-white text-md opacity-0 menuItemDot">&#9679;</p>
 					</div>
 					<div
-						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem">
+						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem" id="modules-link">
 						<p class="PPMonumentBlack text-black text-md menuItemLabel">Efficient Modules</p>
 						<p class="PPMonument text-white text-md opacity-0 menuItemDot">&#9679;</p>
 					</div>
 					<div
-						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem">
+						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem" id="cex-link">
 						<p class="PPMonumentBlack text-black text-md menuItemLabel">Supported CEXes</p>
 						<p class="PPMonument text-white text-md opacity-0 menuItemDot">&#9679;</p>
 					</div>
@@ -107,7 +107,7 @@
 			</div>
 			<div class="heroLight "></div>
 		</section>
-		<section class="w-full h-fit px-8 lg:px-16 pt-16 pb-10 lg:pt-36">
+		<section class="w-full h-fit px-8 lg:px-16 pt-16 pb-10 lg:pt-36 sec">
 			<h5 class="PPMonumentBlack text-white text-xl w-full text-center">The Ultimate Portfolio Tool</h5>
 			<div
 				class="w-full h-fit flex flex-col lg:flex-row items-center justify-start lg:justify-center gap-6 mt-14">
@@ -137,7 +137,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="w-full h-fit px-8 lg:px-16 pt-16 pb-10 flex flex-col items-center justify-start">
+		<section class="w-full h-fit px-8 lg:px-16 pt-16 pb-10 flex flex-col items-center justify-start sec" id="latency">
 			<h5 class="PPMonumentBlack text-white text-xl w-full text-center mb-8">Latency</h5>
 			<h5 class="interMedium text-white text-xl w-full lg:w-6/12 text-center mb-20">Our team has gathered the
 				latest
@@ -837,8 +837,9 @@
 			<img src="./img/legacyMobile.svg" class="block lg:hidden w-11/12 h-auto" alt="latency schema">
 
 		</section>
-		<section class="w-full h-fit flex flex-col items-center justify-start">
+		<section class="w-full h-fit flex flex-col items-center justify-start sec" id="grafana">
 			<h5 class="PPMonumentBlack text-white text-xl w-full text-center mb-8 pt-16">Grafana Dashboard </h5>
+			<p>zdfz</p>
 			<h5 class="interMedium text-white text-xl w-10/12 lg:w-6/12  text-center mb-20">Grafana is an open-source
 				platform renowned for its operational dashboards, monitoring, and alerting. When applied to tracking
 				trades and profits in a crypto arbitrage system, Grafana provides a multitude of advantages that enhance
@@ -851,7 +852,7 @@
 				<div class="smallGlassBoxLightSpot2"></div>
 			</div>
 		</section>
-		<section class="w-full h-fit flex flex-col items-center justify-start">
+		<section class="w-full h-fit flex flex-col items-center justify-start sec" id="modules">
 			<h5 class="PPMonumentBlack text-white text-xl w-full text-center mb-8 pt-16">Efficient Modules</h5>
 			<h5 class="interMedium text-white text-xl w-10/12 lg:w-6/12 text-center mb-20">Embracing Modularity in
 				Crypto Arbitrage: Leveraging (a.o) Docker, Redis, and NATS.
@@ -885,7 +886,7 @@
 			</div>
 
 		</section>
-		<section class="w-full h-fit flex flex-col items-center justify-start trialSection mt-16">
+		<section class="w-full h-fit flex flex-col items-center justify-start trialSection mt-16 sec">
 			<h5 class="PPMonumentBlack text-white text-xl w-full text-center mb-8 pt-12">Curios to know more?</h5>
 			<h5 class="interMedium text-white text-xl w-10/12 lg:w-6/12 text-center mb-10">At AXIAM, transparency is a
 				key value in our daily work, that is why we give client the option to try our software for free, without
@@ -897,7 +898,7 @@
 			</a>
 
 		</section>
-		<section class="w-full h-fit px-8 lg:px-24 pt-16 flex flex-col items-center justify-start">
+		<section class="w-full h-fit px-8 lg:px-24 pt-16 flex flex-col items-center justify-start sec" id="cex">
 			<h5 class="PPMonumentBlack text-white text-xl w-full text-center mt-2 lg:mt-10 mb-8">CEXs That We Support
 			</h5>
 			<h5 class="interMedium text-white text-xl w-full lg:w-6/12 text-center mb-2 lg:mb-12">Our team has gathered
@@ -942,7 +943,7 @@
 			</div>
 
 		</section>
-		<section class="w-full h-fit pt-10 pb-10 flex flex-col items-center justify-start">
+		<section class="w-full h-fit pt-10 pb-10 flex flex-col items-center justify-start sec">
 			<h5 class="PPMonumentBlack text-white text-xl w-10/12 leading-normal text-center mb-8 pt-12 pb-8">Partners &
 				Tech Providers</h5>
 			<div class="marquee">
@@ -1261,7 +1262,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="absolute bottom-0 w-full h-fit flex flex-row items-center justify-center gap-2 pb-20 lg:pb-8 z-50">
+			<div
+				class="absolute bottom-0 w-full h-fit flex flex-row items-center justify-center gap-2 pb-20 lg:pb-8 z-50">
 				<p class="inter text-white text-sm">Terms Of Service</p>
 				<p class="inter text-white text-[0.4rem] ">&#9679</p>
 				<p class="inter text-white text-sm">Privacy Policy</p>
@@ -1270,9 +1272,23 @@
 
 		</footer>
 		<div class="bottom-0 mb-[0.6rem] mx-auto h-fit mobileNav lg:hidden">
+			<div
+				class="w-full h-0 overflow-hidden rounded-xl flex flex-col items-center justify-between bg-[#E10531] gap-8 mb-1 mobileNavMenu">
+				<p class="PPMonument text-white text-xl pt-4 mobileNavMenuItem" id="hero-link">Home</p>
+				<p class="PPMonument text-white text-xl mobileNavMenuItem" id="latency-link">Latency</p>
+				<p class="PPMonument text-white text-xl mobileNavMenuItem" id="grafana-link">Grafana</p>
+				<p class="PPMonument text-white text-xl mobileNavMenuItem" id="modules-link">Eficient Modules</p>
+				<p class="PPMonument text-white text-xl pb-4 mobileNavMenuItem" id="cex-link">Supported CEXs</p>
+			</div>
 			<div class="w-full h-fit rounded-xl py-4 px-4 flex flex-row items-center justify-between bg-[#E10531]">
-				<p class="PPMonument text-white text-xl">Home</p>
-				<img src="./img/menuIcon.svg" class="w-7 aspect-square" alt="">
+				<p class="PPMonument text-white text-xl currentMobileSectionTitle">Home</p>
+				<button
+					class="flex flex-col items-center justify-center h-fit w-fit min-w-[10vw] gap-2 z-50"
+					id="mobileBurgerBtn">
+					<div class="burgerBar mobileBar1"></div>
+					<div class="burgerBar mobileBar2"></div>
+					<div class="burgerBar mobileBar3"></div>
+				</button>
 			</div>
 		</div>
 
