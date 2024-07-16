@@ -51,6 +51,10 @@
 	src: url('/MonumentExtended-Ultrabold.7816525d.otf');
 }
 
+body{
+	overflow-x: hidden !important;
+}
+
 .inter {
 	font-family: "inter";
 }
