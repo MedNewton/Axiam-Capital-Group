@@ -51,6 +51,65 @@
 	src: url('../fonts//MonumentExtended-Ultrabold.otf');
 }
 
+
+@font-face {
+	font-family: 'Aeroport Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Aeroport Regular'), url('../fonts/aeroport/Aeroport-regular-trial.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'Aeroport Light';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Aeroport Light'), url('../fonts/aeroport/Aeroport-light-trial.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'Aeroport Medium';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Aeroport Medium'), url('../fonts/aeroport/Aeroport-medium-trial.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'Aeroport Bold';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Aeroport Bold'), url('../fonts/aeroport/Aeroport-bold-trial.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Aeroport Black';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Aeroport Black'), url('../fonts/aeroport/Aeroport-black.woff') format('woff');
+}
+
+.aeroLight{
+	font-family: 'Aeroport Light';
+}
+
+.aero{
+	font-family: 'Aeroport Regular';
+}
+
+.aeroMedium{
+	font-family: 'Aeroport Medium';
+}
+
+.aeroBold{
+	font-family: 'Aeroport Bold';
+}
+
+.aeroBlack{
+	font-family: 'Aeroport Black';
+}
+
 html {
 	scroll-behavior: smooth !important;
 }
@@ -395,7 +454,7 @@ nav {
 }
 
 .grafanaScreen {
-	box-shadow:  0 0 15px 2px #000000 !important;
+	box-shadow: 0 0 15px 2px #000000 !important;
 	border-radius: 1rem !important;
 }
 
@@ -531,7 +590,7 @@ nav {
 	background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0.62) 58.36%, rgba(0, 0, 0, 0.445128) 72.5%, rgba(0, 0, 0, 0.259658) 87.5%, rgba(0, 0, 0, 0) 100%) !important;
 }
 
-.timeGraphic{
+.timeGraphic {
 	background-position: center !important;
 	background-size: cover !important;
 	background-repeat: no-repeat !important;
