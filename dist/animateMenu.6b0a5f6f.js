@@ -7039,6 +7039,19 @@ var MenuAnimations = /*#__PURE__*/function () {
           //gsap.to(window, { duration: 2, scrollTo: targetSection });
         });
       });
+      var sections = _gsap.default.utils.toArray(".sec");
+      sections.forEach(function (section) {
+        var sectionId = section.getAttribute("id");
+        section.addEventListener('scroll', function () {
+          var rect = section.getBoundingClientRect();
+          var html = section.documentElement;
+          if (rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || html.clientHeight) && rect.right <= (window.innerWidth || html.clientWidth)) {
+            document.querySelector('currentMobileSectionTitle').innerHTML = sectionId;
+          } else {
+            alert("jzjz");
+          }
+        });
+      });
     }
   }]);
 }();

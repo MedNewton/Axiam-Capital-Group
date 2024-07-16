@@ -50,28 +50,28 @@
 				</div>
 				<div
 					class="desktopNavMenu absolute top-24 right-5 bg-[#e10531] mt-2 w-[20%] h-0 overflow-hidden rounded-xl flex flex-col items-start justify-between ">
-					<div
-						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem" id="hero-link">
+					<div class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem"
+						id="hero-link">
 						<p class="PPMonumentBlack text-black text-md menuItemLabel">Home</p>
 						<p class="PPMonument text-white text-md opacity-0 menuItemDot">&#9679;</p>
 					</div>
-					<div
-						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem" id="latency-link">
+					<div class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem"
+						id="latency-link">
 						<p class="PPMonumentBlack text-black text-md menuItemLabel">Latency</p>
 						<p class="PPMonument text-white text-md opacity-0 menuItemDot">&#9679;</p>
 					</div>
-					<div
-						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem" id="grafana-link">
+					<div class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem"
+						id="grafana-link">
 						<p class="PPMonumentBlack text-black text-md menuItemLabel">Grafana</p>
 						<p class="PPMonument text-white text-md opacity-0 menuItemDot">&#9679;</p>
 					</div>
-					<div
-						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem" id="modules-link">
+					<div class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem"
+						id="modules-link">
 						<p class="PPMonumentBlack text-black text-md menuItemLabel">Efficient Modules</p>
 						<p class="PPMonument text-white text-md opacity-0 menuItemDot">&#9679;</p>
 					</div>
-					<div
-						class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem" id="cex-link">
+					<div class="w-full h-fit flex flex-row items-center justify-between px-3 py-4 opacity-0 cursor-pointer desktopNavMenuItem"
+						id="cex-link">
 						<p class="PPMonumentBlack text-black text-md menuItemLabel">Supported CEXes</p>
 						<p class="PPMonument text-white text-md opacity-0 menuItemDot">&#9679;</p>
 					</div>
@@ -112,32 +112,59 @@
 			<div
 				class="w-full h-fit flex flex-col lg:flex-row items-center justify-start lg:justify-center gap-6 mt-14">
 				<div
-					class="w-11/12 lg:w-3/12 aspect-square flex flex-col items-center justify-center gap-3 p-4 rounded-xl glassBox relative overflow-hidden">
-					<h5 class="PPMonumentBlack text-white text-md w-full text-center z-50">Live Market Data</h5>
-					<p class="interMedium text-white text-md w-10/12 text-center z-50">Access up-to-the-minute price
-						information from multiple exchanges to identify immediate arbitrage opportunities.</p>
+					class="w-11/12 lg:w-3/12 aspect-square flex flex-col items-center justify-center gap-3 rounded-xl bg-[#191B1F] border-[0.5px] border-slate-500/50 relative overflow-hidden">
+					<div class="absolute w-full h-2/3 top-0 left-0 right-0 flex flex-col items-center justify-center pt-4 z-10">
+						<div class="w-11/12 h-5/6 flex flex-col items-center justify-around">
+							<img src="./img/time.svg" class="h-1/2 w-auto scale-125" alt="">
+						</div>
+					</div>
+					<div
+						class="absolute w-full h-full bottom-0 left-0 right-0 p-6  flex flex-col items-start justify-end gap-3 z-50">
+						<h5 class="PPMonumentBlack text-white text-md w-full text-left">Live Market Data</h5>
+						<p class="interMedium text-white text-sm w-full text-left">Access up-to-the-minute price
+							information from multiple exchanges to identify immediate arbitrage opportunities.</p>
+					</div>
 
-					<div class="glassBoxLightSpot"></div>
 
 				</div>
 				<div
-					class="w-11/12 lg:w-3/12 aspect-square flex flex-col items-center justify-center gap-3 p-4 rounded-xl glassBox relative overflow-hidden">
-					<h5 class="PPMonumentBlack text-white text-md w-full text-center z-50">Alerts & Notifications</h5>
-					<p class="interMedium text-white text-md w-8/12 text-center z-50">Customize alerts to be notified of
-						emerging opportunities that match your trading criteria.</p>
-					<div class="glassBoxLightSpot"></div>
+					class="w-11/12 lg:w-3/12 aspect-square flex flex-col items-center justify-center gap-3 rounded-xl bg-[#191B1F] border-[0.5px] border-slate-500/50 relative overflow-hidden">
+					<div class="absolute w-full h-2/3 top-0 left-0 right-0 flex flex-col items-center justify-center pt-4 z-10">
+						<div class="w-11/12 h-5/6 flex flex-col items-center justify-around">
+							<img src="./img/notification.svg" class="h-1/2 w-auto scale-90" alt="">
+						</div>
+					</div>
+					<div
+						class="absolute w-full h-full bottom-0 left-0 right-0 p-6 flex flex-col items-start justify-end gap-3 z-50">
+						<h5 class="PPMonumentBlack text-white text-md w-full text-left">Alerts & Notifications</h5>
+						<p class="interMedium text-white text-sm w-full text-left">Customize alerts to be notified of
+							emerging opportunities that match your trading criteria.</p>
+					</div>
+
+
 				</div>
 				<div
-					class="w-11/12 lg:w-3/12 aspect-square flex flex-col items-center justify-center gap-3 p-4 rounded-xl glassBox relative overflow-hidden">
-					<h5 class="PPMonumentBlack text-white text-md w-10/12 lg:w-full text-center z-50">Portfolio Impact
-						Analysis</h5>
-					<p class="interMedium text-white text-md w-10/12 text-center z-50">Understand how executing
-						real-time opportunities can affect your portfolio's performance and risk profile.</p>
-					<div class="glassBoxLightSpot"></div>
+					class="w-11/12 lg:w-3/12 aspect-square flex flex-col items-center justify-center gap-3 rounded-xl bg-[#191B1F] border-[0.5px] border-slate-500/50 relative overflow-hidden">
+					<div class="absolute w-full h-2/3 top-0 left-0 right-0 flex flex-col items-center justify-center pt-4 z-10">
+						<div class="w-11/12 h-5/6 flex flex-col items-center justify-around">
+							<img src="./img/risk.svg" class="h-1/2 w-auto scale-[1.4] " alt="">
+						</div>
+					</div>
+					<div
+						class="absolute w-full h-full bottom-0 left-0 right-0 p-6  flex flex-col items-start justify-end gap-3 z-50">
+						<h5 class="PPMonumentBlack text-white text-md w-full whitespace-nowrap text-left">Portfolio Impact
+							Analysis</h5>
+						<p class="interMedium text-white text-sm w-full text-left">Understand how executing
+							real-time opportunities can affect your portfolio's performance and risk profile.</p>
+					</div>
+
+
 				</div>
+				
 			</div>
 		</section>
-		<section class="w-full h-fit px-8 lg:px-16 pt-16 pb-10 flex flex-col items-center justify-start sec" id="latency">
+		<section class="w-full h-fit px-8 lg:px-16 pt-16 pb-10 flex flex-col items-center justify-start sec"
+			id="latency">
 			<h5 class="PPMonumentBlack text-white text-xl w-full text-center mb-8">Latency</h5>
 			<h5 class="interMedium text-white text-xl w-full lg:w-6/12 text-center mb-20">Our team has gathered the
 				latest
@@ -859,27 +886,27 @@
 				In the rapidly evolving domain of cryptocurrency arbitrage, the capacity to swiftly adapt to market
 				changes is crucial. Our system is meticulously architected to encapsulate modularity, utilizing a
 				combination of Docker, Redis, and NATS to create a robust, scalable, and efficient trading bot
-				ecosystem.</h5>
+				ecosystem.<br><br>Some example pairs:</h5>
 			<div class="w-full h-fit flex flex-col lg:flex-row items-center justify-start lg:justify-center gap-6">
 				<div
-					class="w-11/12 lg:w-4/12 aspect-square flex flex-col items-center justify-center gap-3 px-4 pt-4 pb-2 rounded-xl glassBox relative overflow-hidden">
+					class="w-11/12 lg:w-4/12 aspect-square flex flex-col items-center justify-center gap-3 px-4 pt-4 pb-2 rounded-xl bg-[#191B1F] border-[0.5px] border-slate-500/50 relative overflow-hidden">
 					<h5 class="PPMonumentBlack text-white text-md w-full text-center z-50 mb-6">BTC/USDT</h5>
 					<img src="./img/module.svg" class="w-11/12 h-auto" alt="BTC/USDT module">
 				</div>
 				<div
-					class="w-11/12 lg:w-4/12 aspect-square flex flex-col items-center justify-center gap-3 px-4 pt-4 pb-2 rounded-xl glassBox relative overflow-hidden">
+					class="w-11/12 lg:w-4/12 aspect-square flex flex-col items-center justify-center gap-3 px-4 pt-4 pb-2 rounded-xl bg-[#191B1F] border-[0.5px] border-slate-500/50 relative overflow-hidden">
 					<h5 class="PPMonumentBlack text-white text-md w-full text-center z-50 mb-6">ETH/USDT</h5>
 					<img src="./img/module.svg" class="w-11/12 h-auto" alt="BTC/USDT module">
 				</div>
 			</div>
 			<div class="w-full h-fit flex flex-col lg:flex-row items-center justify-start lg:justify-center gap-6 mt-6">
 				<div
-					class="w-11/12 lg:w-4/12 aspect-square flex flex-col items-center justify-center gap-3 px-4 pt-4 pb-2 rounded-xl glassBox relative overflow-hidden">
+					class="w-11/12 lg:w-4/12 aspect-square flex flex-col items-center justify-center gap-3 px-4 pt-4 pb-2 rounded-xl bg-[#191B1F] border-[0.5px] border-slate-500/50 relative overflow-hidden">
 					<h5 class="PPMonumentBlack text-white text-md w-full text-center z-50 mb-6">DOGE/USDT</h5>
 					<img src="./img/module.svg" class="w-11/12 h-auto" alt="BTC/USDT module">
 				</div>
 				<div
-					class="w-11/12 lg:w-4/12 aspect-square flex flex-col items-center justify-center gap-3 px-4 pt-4 pb-2 rounded-xl glassBox relative overflow-hidden">
+					class="w-11/12 lg:w-4/12 aspect-square flex flex-col items-center justify-center gap-3 px-4 pt-4 pb-2 rounded-xl bg-[#191B1F] border-[0.5px] border-slate-500/50 relative overflow-hidden">
 					<h5 class="PPMonumentBlack text-white text-md w-full text-center z-50 mb-6">LTC/USDT</h5>
 					<img src="./img/module.svg" class="w-11/12 h-auto" alt="BTC/USDT module">
 				</div>
@@ -1282,8 +1309,7 @@
 			</div>
 			<div class="w-full h-fit rounded-xl py-4 px-4 flex flex-row items-center justify-between bg-[#E10531]">
 				<p class="PPMonument text-white text-xl currentMobileSectionTitle">Home</p>
-				<button
-					class="flex flex-col items-center justify-center h-fit w-fit min-w-[10vw] gap-2 z-50"
+				<button class="flex flex-col items-center justify-center h-fit w-fit min-w-[10vw] gap-2 z-50"
 					id="mobileBurgerBtn">
 					<div class="burgerBar mobileBar1"></div>
 					<div class="burgerBar mobileBar2"></div>
